@@ -1,0 +1,120 @@
+﻿@model PokemonDb.pokemon
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>pokemon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Attack)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Attack)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Defense)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Defense)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sp_Atk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sp_Atk)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sp_Def)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sp_Def)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Speed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Speed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Generation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Generation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Legendary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Legendary)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

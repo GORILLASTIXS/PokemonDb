@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EFPokemonDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EFPokemonDb.dbo.pokemon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="pokemon">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Total" Type="smallint" />
+          <Property Name="HP" Type="tinyint" />
+          <Property Name="Attack" Type="tinyint" />
+          <Property Name="Defense" Type="tinyint" />
+          <Property Name="Sp_Atk" Type="tinyint" />
+          <Property Name="Sp_Def" Type="tinyint" />
+          <Property Name="Speed" Type="tinyint" />
+          <Property Name="Generation" Type="tinyint" />
+          <Property Name="Legendary" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="EFPokemonDbModelStoreContainer">
+          <EntitySet Name="pokemon" EntityType="Self.pokemon" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [pokemon].[Id] AS [Id], 
+    [pokemon].[Name] AS [Name], 
+    [pokemon].[Type_1] AS [Type_1], 
+    [pokemon].[Type_2] AS [Type_2], 
+    [pokemon].[Total] AS [Total], 
+    [pokemon].[HP] AS [HP], 
+    [pokemon].[Attack] AS [Attack], 
+    [pokemon].[Defense] AS [Defense], 
+    [pokemon].[Sp_Atk] AS [Sp_Atk], 
+    [pokemon].[Sp_Def] AS [Sp_Def], 
+    [pokemon].[Speed] AS [Speed], 
+    [pokemon].[Generation] AS [Generation], 
+    [pokemon].[Legendary] AS [Legendary]
+    FROM [dbo].[pokemon] AS [pokemon]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EFPokemonDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="pokemon">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Total" Type="Int16" />
+          <Property Name="HP" Type="Byte" />
+          <Property Name="Attack" Type="Byte" />
+          <Property Name="Defense" Type="Byte" />
+          <Property Name="Sp_Atk" Type="Byte" />
+          <Property Name="Sp_Def" Type="Byte" />
+          <Property Name="Speed" Type="Byte" />
+          <Property Name="Generation" Type="Byte" />
+          <Property Name="Legendary" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="EFPokemonDbEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="pokemons" EntityType="Self.pokemon" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EFPokemonDbModelStoreContainer" CdmEntityContainer="EFPokemonDbEntities1">
+          <EntitySetMapping Name="pokemons">
+            <EntityTypeMapping TypeName="EFPokemonDbModel.pokemon">
+              <MappingFragment StoreEntitySet="pokemon">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type_1" ColumnName="Type_1" />
+                <ScalarProperty Name="Type_2" ColumnName="Type_2" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="HP" ColumnName="HP" />
+                <ScalarProperty Name="Attack" ColumnName="Attack" />
+                <ScalarProperty Name="Defense" ColumnName="Defense" />
+                <ScalarProperty Name="Sp_Atk" ColumnName="Sp_Atk" />
+                <ScalarProperty Name="Sp_Def" ColumnName="Sp_Def" />
+                <ScalarProperty Name="Speed" ColumnName="Speed" />
+                <ScalarProperty Name="Generation" ColumnName="Generation" />
+                <ScalarProperty Name="Legendary" ColumnName="Legendary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
